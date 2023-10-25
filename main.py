@@ -464,3 +464,79 @@
 # #{'a': 'a1', 'b': True, 'rev': []}
 # print(inf_dpc)
 # #{'a': 'a1', 'b': True, 'rev': ['Great']}
+
+# Функции
+# def sum(a, b):
+#     c = a+b
+#     print(c)
+
+
+# sum(4, 5)
+
+# самая коротка функция
+# def my_fn():
+#     pass - служебная для отложки
+
+
+# print(my_fn())
+
+# передача изменяемыъ объектов
+# def name(person):
+#     person['age'] += 1
+#     return person
+
+
+# person_one = {
+#     'name': 'Sema',
+#     'age': 21,
+# }
+# name(person_one)
+# print(person_one['age'])
+# # 22
+
+# Создание копии объекта
+# def name(person):
+#     person_copy = person.copy()
+#     person_copy['age'] += 1
+#     return person_copy
+
+
+# person_one = {
+#     'name': 'bob',
+#     'age': 21
+# }
+# new_person = name(person_one)
+# print(new_person['age'])  # 22
+# print(person_one['age'])  # 21
+
+# Аргументы функции
+
+# Объединение аргументов в tuple
+# def sum_nums(*args):
+#     print(args)  # (2,3,7)
+#     print(type(args))
+#     print(args[0])  # 2
+#     return sum(args) # воспользовались встроенной функцией sum()
+
+
+# print(sum_nums(2, 3, 7))  # 12
+
+# F string  динамическое формирование строки
+# def get_posts_info(name, posts_qty):
+#     info = f"{name} wrote {posts_qty} posts"
+#     return info
+
+
+# info = get_posts_info('Sema4', 25)
+# print(info)
+
+# Аргументы с ключевыми словами
+# F string  динамическое формирование строки
+def get_posts_info(name, posts_qty):
+    info = f"{name} wrote {posts_qty} posts"
+    return info
+
+
+# Аргументы ключевыми словами, ясно что на порядок пофиг
+info = get_posts_info(name='Sema4', posts_qty=25)
+print(info)
