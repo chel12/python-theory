@@ -532,11 +532,70 @@
 
 # Аргументы с ключевыми словами
 # F string  динамическое формирование строки
-def get_posts_info(name, posts_qty):
-    info = f"{name} wrote {posts_qty} posts"
-    return info
+# def get_posts_info(name, posts_qty):
+#     info = f"{name} wrote {posts_qty} posts"
+#     return info
 
 
-# Аргументы ключевыми словами, ясно что на порядок пофиг
-info = get_posts_info(name='Sema4', posts_qty=25)
-print(info)
+# # Аргументы ключевыми словами, ясно что на порядок пофиг
+# info = get_posts_info(name='Sema4', posts_qty=25)
+# print(info)
+
+# Объединение именованных аргументов в словарь
+# def get_posts_info(**person):
+#     print(person)  # аргументы с ключевыми словами станут словарём
+#     info = (  # это не кортеж и без запятой пайтон сложит в строку
+#         f"{person['name']} wrote "
+#         f"{person['posts_qty']} posts"
+#     )
+#     return info
+
+
+# info = get_posts_info(name='Sema', posts_qty=25)
+# print(info)
+# #{'name': 'Sema', 'posts_qty': 25}
+# Sema wrote 25 posts
+
+# Параметры по умолчанию
+# def mult_by_factor(value, mult=1):
+#     return value * mult #(значение параметра по умолчанию)
+
+
+# print(mult_by_factor(10, 2)) #20
+# print(mult_by_factor(5)) #5
+
+# пример текущего дня недели в качестве параметра по умолчанию
+# from datetime import date
+
+
+# def get_weekday():
+#     return date.today().strftime('%A')
+
+
+# def create_new_post(post, weekday=get_weekday()):
+#     post_copy = post.copy()
+#     post_copy['created_on_weekday'] = weekday
+#     return post_copy
+
+
+# initial_post = {
+#     'id': 243,
+#     'author': 'Bogdan',
+# }
+# post_with_weekday = create_new_post(initial_post)
+# print(post_with_weekday)
+
+# Колбек функции
+def print_number_info(num):
+    if (num % 2) == 0:
+        print("Entered number is even")
+    else:
+        print("Entered number is odd")
+
+
+def process_number(num, callback_fn):
+    callback_fn(num)
+
+
+entered_num = int(input('Enter any number: '))
+process_number(entered_num, print_number_info)
