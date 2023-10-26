@@ -1,3 +1,4 @@
+
 # https://www.notion.so/Python-0053f6da788f4b8e9b141213935df3aa
 # # my_number = 10
 # print(id(my_number))
@@ -623,4 +624,128 @@
 
 # print_number_info()
 
-#Области видимости 
+# Области видимости
+
+# множества
+# data = set('hello')
+# data.add(32)
+# data.add(32)
+# data.update(['32', 1, 2, 3, 4, 5])
+# data.remove('l')
+# data.pop()
+# new_data = [5, 5, 5, 6, 7]
+# new_set = set(new_data)
+
+# Frozenset
+# new_data = frozenset([5, 6, 7, 7, 6, 5])
+# print(new_data)
+
+# Функции (def, lambda)
+# def test_func(text):
+#     print(text, end=" !")
+
+
+# test_func('sd')
+# def summa(a, b):
+#     res = a + b
+#     return res
+
+
+# res = summa(3, 2)
+# print(res)
+
+# nums1 = [5, 7, 9, 4]
+# min = nums1[0]
+# for el in nums1:
+#     if el < min:
+#         min = el
+
+# print(min)
+# list_number = [22, 33, 2, 6, 4, 6]
+
+
+# def minimal(l):
+#     min_number = l[0]
+#     for el in l:
+#         if el < min_number:
+#             min_number = el
+#             return min_number
+#             print("Min number: ", min_number)
+
+
+# minimal(list_number)
+
+# Анонимная или лямбда функция
+# func = lambda x, y: x*y
+# res = func(5,2)
+# print(res)
+
+# Работа с файлами за счет Питон
+# Основные правила работы с файлами
+# 1) открыть функцией, 2) прочитать или изменить 3) закрыть
+# data = input("Введите текст: ")
+
+# file = open('data/text.txt', 'a')  # добавить
+# file.write('Hello\n')
+# file.write(data)
+
+# file.close()
+
+# Считывание
+# file = open('data/text.txt', 'r')
+# # print(file.read())
+# for line in file:  # перевод строки
+#     print(line)
+# file.close()
+
+# Обработчик исключений. Конструкция «try - except»
+# Исключения это ошибки
+# try:
+#     x = int(input('Введите число: '))
+#     x += 5
+#     print(x)
+# except ValueError:  # какую ошибку отслеживаем
+#     print("Введите число!")
+
+# прога
+# x = 0
+# while x == 0:
+#     try:
+#         x = int(input('Введите число: '))
+#         x += 5
+#         print(x)
+#     except ValueError:  # какую ошибку отслеживаем
+#         print("Введите число!")
+
+# Менеджер «With ... as» для работы с файлами
+# try:
+#     with open('text.text', 'r', encoding='utf-8') as file:
+#         print(file.read())
+# except FileNotFoundError:
+#     print("Файл не найден")
+
+# Модули в языке Питон. Создание и работа с модулями
+# модуль работы со временем
+# import time
+# time.sleep() #заморозка работы программы
+# print('Hello')
+
+# дата и время
+# import datetime as d
+# print(d.datetime.now().time())
+
+
+# import datetime as d
+# import sys
+# import os
+# import platform
+# from math import sqrt
+# print(sqrt(64))
+
+# Пилим свой модуль
+# 1 делаем свой файл
+
+# import mymodule as my
+
+# print(my.name)
+# my.hello()
